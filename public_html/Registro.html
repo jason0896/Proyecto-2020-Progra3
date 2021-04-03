@@ -3,29 +3,39 @@
 
 <head>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="bootstrap Templates">
-    <meta name="author" content="bootstrap">
-    <meta name="keywords" content="bootstrap Templates">
+   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    
-    <title>Pagina Registro</title>
-      
+  <title>EXPERT KCJA</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    
-    
-    <script src="js/global.js" type="text/javascript"></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mentor - v4.0.1
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-
-  
-
-
-
 
 <body>
     
@@ -38,11 +48,11 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registro de nuevos usuarios</h2>
-                    <form onsubmit="alert('Registro Completado con exito!'); return false;" id="form_datos method="POST">
-                        <div class="row row-space">
+                    <form action="index.html" onsubmit="alert('Registro Completado con exito!'); return true;" id="form_datos method="POST">
+                        <div class="row mt-5">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Nombre</label>
+                                    <label class="label">Nombre:</label>
                                     <input class="input--style-4" type="text" name="first_name">
                                 </div>
                             </div>
@@ -53,22 +63,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-space">
+                         
+                        <div class="row mt-5">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Fecha/Nacimiento</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="date"  name="birthday">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                             </div>
+                             
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Genero</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Masculino
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Femenino
@@ -83,12 +95,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-space">
+                          
+                        <div class="row mt-5">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Correo Electronico</label>
                                     <input class="input--style-4" type="email" name="email">
                                 </div>
+                                 <br>
                                 <div class="input-group">
                                     <label class="label">Nueva Contraseña</label>
                                     <input class="input--style-4" type="password" name="password">
@@ -101,21 +115,22 @@
                                 </div>
                             </div>
                         </div>
-                        
+                          <br>
                         <div class="p-t-15">
-                            <button  class="btn btn--radius-2 btn--blue" type="submit">Registrarse</button>
+                            <button  class="btn-toolbar" type="submit">Registrarse</button>
                             
                         </div>
                         
                     </form>
                     
                     <br><a href="InicioSesion.html">
-                            <button class="btn btn--radius-2 btn--blue">Iniciar Sesion</button>
+                        
+                            <button class="btn-toolbar">Iniciar Sesion</button>
                             </a>
-                    <br>
+                    
                     
                     <br><a href="index.html">
-                            <button class="btn btn--radius-2 btn--blue">Volver</button>
+                            <button class="btn-toolbar">Volver</button>
                             </a>
                 </div>
             </div>

@@ -51,27 +51,27 @@
                 <div class="card-body">
                     <h2 class="title">Inicio Sesion</h2>
                                    
-                    <form action="index.html" onsubmit="alert('Ha iniciado sesion con exito!'); return true;" id="form_datos method="POST">
+                    <form action="BACKEND/Login.php" ; method="POST">
                         
                         <div class="row row-space">
                             <div class="col-3">
                                 <div class="input-group">
-                                    <label class="label">Correo Electronico</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <label class="label">Usuario</label>
+                                    <input class="input--style-4" type="text" name="usuario">
                                 </div>
                                
                             </div>
                             <div class="col-3">
                                 <div class="input-group">
                                     <label class="label">Contraseña</label>
-                                    <input class="input--style-4" type="text" name="password">
+                                    <input class="input--style-4" type="password" name="password">
                                 </div>
                             </div>
                         </div>
                         
-                        <div  class="p-t-15">
+                        <div >
                             <br> 
-                            <button class="btn-get-started" >Iniciar Sesion</button>
+                            <button type="submit" class="btn-get-started" >Iniciar Sesion</button>
                            
                             
                             

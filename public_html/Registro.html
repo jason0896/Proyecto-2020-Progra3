@@ -48,18 +48,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registro de nuevos usuarios</h2>
-                    <form action="index.html" onsubmit="alert('Registro Completado con exito!'); return true;" id="form_datos method="POST">
+                    <form action="BACKEND/Acceso.php" ; method="POST">
                         <div class="row mt-5">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nombre:</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="Nombre">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Apellido</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="Apellido">
                                 </div>
                             </div>
                         </div>
@@ -69,35 +69,29 @@
                                 <div class="input-group">
                                     <label class="label">Fecha/Nacimiento</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="date"  name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="date"  name="Fec_Nac">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                             </div>
-                             
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Genero</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Masculino
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Femenino
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Desconocido
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                           
                         <div class="row mt-5">
+                            
                             <div class="col-2">
+                                     
+                                
+                                <label class="label">Direccion</label>
+                                    <input class="input--style-4" type="text" name="Direccion">
+                               
+                                <div class="input-group">
+                                    <label class="label">usuario</label>
+                                    <input class="input--style-4" type="text" name="usuario">
+                                </div>
+                                 </div>
+                                <div class="input-group">
+                               
                                 <div class="input-group">
                                     <label class="label">Correo Electronico</label>
                                     <input class="input--style-4" type="email" name="email">
@@ -105,13 +99,13 @@
                                  <br>
                                 <div class="input-group">
                                     <label class="label">Nueva Contraseña</label>
-                                    <input class="input--style-4" type="password" name="password">
+                                    <input class="input--style-4" type="password" name="Contraseña">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Numero Telefonico</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="Telefono">
                                 </div>
                             </div>
                         </div>

@@ -26,8 +26,9 @@ if(!empty($_POST))
 			}
 		}
 	}
-   
 
+    
+ print "<script>alert(\"Acceso invalido.\");window.location='../InicioSesion.html';</script>";
 }
 
 ?>

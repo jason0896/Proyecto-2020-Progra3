@@ -1,9 +1,10 @@
 <?php
 include 'Conectar.php';
 
+
 if (!$con) {
 	die('No se ha podido conectar a la base de datos');
-      
+      echo ' Eroro de conexion ';
 }
 
 
@@ -13,25 +14,32 @@ $Fech_Nac = ($_POST['Fec_Nac']);
 $direc = ($_POST['Direccion']);
 $email = ($_POST['email']);
 $Num_tel = ($_POST['Telefono']);
+$usua= ($_POST['usuario']);
+$contra =  ($_POST['Contraseña']);  
 
- $sql = 'SELECT * FROM usuarios'; 
- $rec = mysql_query($sql); 
+$sql= $con->query("SELECT * FROM usuario WHERE usuario = '$usua'") ; 
+$sql= mysqli_num_rows($sql);
+  
+ if ($sql >= 1 ){
 
- if (mysql_num_rows($rec)>0)
-{
-header('Fallido');
+echo ' Ya existe ';
 
 } else {
- header('Fallido 2');
-    $insert_value =  'INSERT INTO `' . $chat_experto . '`.`'.$persona.'` (`idPersona`,`Activo`,`Nombre`, `Apellido`, `Fecha_Nacimiento`,`Direcion`,`Telefono`,`Correo`) VALUES (2,1,"' . $subs_name . '", "' . $subs_last . '", "' . $Fech_Nac . '","' . $direc  . '","' . $email . '","' . $Num_tel . '")';
 
- mysql_select_db($chat_experto, $con);
-$retry_value = mysql_query($insert_value, $con);
- if (!$retry_value) {
-   die('Error: ' . mysql_error());
+    $sqlinsert1 = $con->query ("insert into `chat_experto`.`persona`
+    ( `Activo`, `Nombre`, `Apellido`, `Fecha_Nacimiento`, `Direcion`, `Telefono`,`Correo`)
+    values
+    (1 , '$subs_name','$subs_last','$Fech_Nac','$direc','$Num_tel','$email')");
+
+    
+    $sqlinsert2 =$con->query ("insert into `chat_experto`.`usuario`
+( `Usuario`, `Activo`, `Contraseña`, `Tipo_Usuario`, `Persona_idPersona`)
+values
+( '$usua',1,'$contra','Usuario',1);");
+    
+
+    
+//header('Location: ../InicioSesion.html');
+
 }
-	
-header('Location: ../events.html');
-}
- mysql_close($con);
 ?>

@@ -2,12 +2,16 @@
 include 'Conectar.php';
 
 
+
+
+   
 if (!$con) {
 	die('No se ha podido conectar a la base de datos');
       echo ' Eroro de conexion ';
 }
 
-
+if(empty($_POST))
+{
 $subs_name = ($_POST['Nombre']);
 $subs_last = ($_POST['Apellido']);
 $Fech_Nac = ($_POST['Fec_Nac']);
@@ -39,7 +43,13 @@ values
     
 
     
-//header('Location: ../InicioSesion.html');
+header('Location: ../InicioSesion.html');
 
 }
+
+}
+
+print "<script>alert(\"No se ha digitado nada.\");window.location='../Registro.html';</script>";
+
+
 ?>

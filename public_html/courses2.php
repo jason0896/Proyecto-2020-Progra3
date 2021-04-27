@@ -1,3 +1,9 @@
+<?php
+include 'BACKEND/Conectar.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +11,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Events - Mentor Bootstrap Template</title>
+  <title>Courses - Mentor Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -48,66 +54,84 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-           <li><a href="index.html">Inicio</a></li>
-          <li><a href="courses.html">Cursos</a></li>
+          <li><a  href="index.html">Inicio</a></li>
+          <li><a class="active" href="courses.html">Cursos</a></li>
           <li><a href="trainers.html">Entrenamiento</a></li>
-          <li><a class="active" href="events.html">Eventos</a></li>
+          <li><a href="events.html">Eventos</a></li>
+          <li><a href="pricing.html">Precio</a></li>
           <li><a href="contact.html">Contactenos</a></li>
           <li><a href="about.html">Acerca de</a></li>
-          <li><a href="InicioSesion.html">Inicio Sesion</a></li>
-         
+          <li><a href="InicioSesion.html">Inicio Sesion</a></li>      
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
+     
 
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <main id="main" data-aos="fade-in">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs" data-aos="fade-in">
+    <div class="breadcrumbs">
       <div class="container">
-        <h2>Events</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <h2>Temas</h2>
+        <p>Escoja uno de los temas que nuestroa asesores le ayudara</p>
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Events Section ======= -->
-    <section id="events" class="events">
-      <div class="container" data-aos="fade-up">
+    <!-- ======= Courses Section ======= -->
+    <section id="courses" class="courses">
+         <h2> Escogencia de Temas</h2>	
+		<div class="well well-small">
+		<hr class="soft"/>
+		<h4>Listado de Temas</h4>
+		<div class="row-fluid">
+                 <table> 
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre Tema</th>
+                            <th>Costo</th>
+                            <th>Observaciones</th>
+                            <th>Estado</th>
+                            <th>Nombre_Experto</th>
+                            <th>Apellido_Experto</th>
+                                  <th>Conectar</th>
+                        </tr>
+                       <?php
+                        $sql= $con->query("select idTema_Categoria, Nombre_Categoria, Costo_Minuto, Observaciones, Estado, p.Nombre, p.Apellido
+                                    from temas t inner join persona p on t.Usuario_idUsuario = p.idPersona;");
+                        $result = mysqli_num_rows($sql);
+                        if ($result > 0 ){
+                           
+                   
+                            
+                            while ($data = mysqli_fetch_array($sql)) {
+                          ?>  
+                        <tr>
+                            <th><?php echo $data["idTema_Categoria"]?></th>
+                            <th><?php echo $data["Nombre_Categoria"]?></th>
+                            <th><?php echo $data["Costo_Minuto"]?></th>
+                            <th><?php echo $data["Observaciones"]?></th>
+                            <th><?php echo $data["Estado"]?></th>
+                            <th><?php echo $data["Nombre"] ?></th>
+                            <th><?php echo $data["Apellido"]?> </th>
+                              <th>
+                                  <a href="CHAT/login.php"> Conectar Experto</a>
+                        </th> 
+                        </tr>
+                    <?php        
+                         }
+                       }
 
-        <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-1.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Introduction to webdesign</a></h5>
-                <p class="font-italic text-center">Sunday, September 26th at 7:00 pm</p>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-2.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Marketing Strategies</a></h5>
-                <p class="font-italic text-center">Sunday, November 15th at 7:00 pm</p>
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-              </div>
-            </div>
 
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Events Section -->
+                    ?>
+                </table>
+                    
+        
+        
+    </section><!-- End Courses Section -->
 
   </main><!-- End #main -->
 
@@ -177,7 +201,7 @@
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
-   
+    
     </div>
   </footer><!-- End Footer -->
 

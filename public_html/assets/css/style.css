@@ -8,7 +8,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
+body{
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
@@ -18,8 +18,9 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
-  color: #86db9f;
+  color: blue;
   text-decoration: none;
 }
 
@@ -27,6 +28,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+ label{
+font-family: "Open Sans", sans-serif;
+ color: blue;
+ font-size: 25px;
+ align-items: center;
+ 
+ }
+ 
+ input{
+
+ align-items: center;
+ width: 300px;
+ }
+ 
+ 
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -149,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * Get Startet Button 
 */
-.get-started-btn {
+.get-started-btn, btn-get-started {
   margin-left: 22px;
   background: blue;
   color: #fff;
@@ -161,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-.get-started-btn:hover {
+.get-started-btn, btn-get-started:hover {
   background: blue;
   color: #fff;
 }
@@ -430,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+#hero .btn-get-started  {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 15px;
@@ -1545,3 +1561,17 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+/*Tablas de usuario*/
+body {font-family: Arial, Helvetica, sans-serif;}
+
+table {     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    margin: 45px;     width: 480px; text-align: left;    border-collapse: collapse; }
+
+th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
+    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
+
+td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
+    color: #669;    border-top: 1px solid transparent; }
+
+tr:hover td { background: #d0dafd; color: #339; }

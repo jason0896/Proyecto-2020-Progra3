@@ -1,3 +1,11 @@
+<?php
+include 'BACKEND/Conectar.php';
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pricing - Mentor Bootstrap Template</title>
+  <title>Admin_Users</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -48,110 +56,85 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a  href="index.html">Inicio</a></li>
+           <li><a href="index.html">Inicio</a></li>
           <li><a href="courses.html">Cursos</a></li>
-          <li><a href="trainers.html">Entrenamiento</a></li>
+          <li><a class="active" href="Admin_user.php">Administracion de usuarios</a></li>
           <li><a href="events.html">Eventos</a></li>
-          <li><a class="active" href="pricing.html">Precio</a></li>
+          <li><a href="pricing.html">Precio</a></li>
           <li><a href="contact.html">Contactenos</a></li>
-          <li><a href="about.html">Acerca de</a></li>
-          <li><a href="InicioSesion.html">Inicio Sesion</a></li>
-          
+          <li><a href="about.html">Acerca de</a></li>   
+            <li><a href="InicioSesion.html">Inicio Sesion</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
+
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <main id="main" data-aos="fade-in">
+
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs" data-aos="fade-in">
+    <div class="breadcrumbs">
       <div class="container">
-        <h2>Pricing</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <h2>Administracion de usuarios</h2>
+        <p>Manejo de usuarios, maneje con cuidado</p>
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container" data-aos="fade-up">
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+        <h2> Administración de usuarios registrados</h2>	
+		<div class="well well-small">
+		<hr class="soft"/>
+		<h4>Tabla de Usuarios</h4>
+		<div class="row-fluid">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Correo</th>
+                            <th>Usuario</th>
+                            <th>Tipo_usuario</th>
+                      
+                        </tr>
+                        <?php
+                        $sql= $con->query("select p.idPersona, p.Activo, p.Nombre, p.Apellido, p.Fecha_Nacimiento, p.Direcion, p.Telefono, p.Correo, u.Usuario, u.Tipo_Usuario
+                                        from persona p inner join usuario u on u.idUsuario = p.idPersona;");
+                        $result = mysqli_num_rows($sql);
+                        if ($result > 0 ){
+                            while ($data = mysqli_fetch_array($sql)) {
+                          ?>  
+                        <tr>
+                        <th><?php echo $data["idPersona"]?></th>
+                        <th><?php echo $data["Nombre"]?></th>
+                        <th><?php echo $data["Apellido"]?></th>
+                        <th><?php echo $data["Fecha_Nacimiento"]?> </th>
+                        <th><?php echo $data["Direcion"]?> </th>
+                        <th><?php echo $data["Telefono"]?> </th>
+                        <th><?php echo $data["Correo"]?></th>
+                        <th><?php echo $data["Usuario"] ?> </th>
+                        <th><?php echo $data["Tipo_Usuario"]?></th> 
+                      
+                        </tr>
+                    <?php        
+                         }
+                       }
 
-        <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <div class="box featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
+                    ?>
+                    </table>
+                    <br>  
+                    <a href="Registro.html">
+                        
+                            <button class="btn-toolbar" style="background-color: blue; border-color:white; color: white">Crear Usuario</button>
+                       </a>             
+        
+    </section><!-- End Trainers Section -->
 
   </main><!-- End #main -->
 
